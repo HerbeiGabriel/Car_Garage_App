@@ -1,1 +1,1 @@
-# Car_Garage_App
+This project is a simple garage management app built with JavaFX. It helps track cars and reservations, offering features like adding, updating, deleting, and searching records. The app supports both memory and database storage, making it flexible. It also gave me a chance to learn more about JavaFX, Scene Builder, and handling data with repositories.

@@ -10,11 +10,17 @@ public class Repository<ID, T> implements IRepository<ID, T> {
 
     @Override
     public void add(ID id, T t) {
+        if (map.containsKey(id)) {
+            throw new IllegalArgumentException("The ID already exists");
+        }
         map.put(id, t);
     }
 
     @Override
     public void delete(ID id) {
+        if (!map.containsKey(id)) {
+            throw new IllegalArgumentException("The ID doesn't exists");
+        }
         map.remove(id);
     }
 
@@ -25,6 +31,9 @@ public class Repository<ID, T> implements IRepository<ID, T> {
 
     @Override
     public void update(ID id, T t) {
+        if (!map.containsKey(id)) {
+            throw new IllegalArgumentException("The ID doesn't exists");
+        }
         map.put(id, t);
     }
 

@@ -73,4 +73,8 @@ public class Reservation implements Identifiable<Integer>{
                 ", price=" + price +
                 '}';
     }
+
+    public String forText(){
+        return id+","+carid+","+date+","+customername+","+price;
+    }
 }

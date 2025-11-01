@@ -11,9 +11,11 @@ public class Main {
         try{
             Properties prop = new Properties();
             prop.load(new FileReader("settings.properties"));
-            String repopath=prop.getProperty("Path");
             String type=prop.getProperty("Repository");
-            Service service=new Service(type, repopath);
+            String location=prop.getProperty("Location");
+            String car_filename = prop.getProperty("Car");
+            String reservation_filename = prop.getProperty("Reservation");
+            Service service=new Service(type, location, car_filename, reservation_filename);
             UI UI=new UI(service);
             UI.run();
         }catch (Exception e){

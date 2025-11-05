@@ -27,7 +27,10 @@ public class Service {
             this.reservationrepo=new FileRepoReservations(filenameReservation);
         }
         else if(type.equals("BinaryFile")){
-
+            String filenameCar = location + "/" + type +car+".bin";
+            String filenameReservation=location+ "/" + type +reservation+".bin";
+            this.carrepo=new FileRepoCar(filenameCar);
+            this.reservationrepo=new FileRepoReservations(filenameReservation);
         }
     }
 

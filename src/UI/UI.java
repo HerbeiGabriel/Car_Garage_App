@@ -91,7 +91,7 @@ public class UI {
                     int carFuelTank = scanner.nextInt();
                     Car car = new Car(carID, carModel, carHorsepower, carFuelTank);
                     service.addcar(carID, car);
-                }catch (Exception e){
+                }catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }

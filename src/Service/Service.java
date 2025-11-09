@@ -10,14 +10,27 @@ public class Service {
     private IRepository<Integer, Car> carrepo;
     private IRepository<Integer, Reservation> reservationrepo;
 
-    public Service(String type, String repopath){
+    public Service(String type, String location, String car, String reservation) {
         if(type.equals("database")){
+            String repopath = location + "/" + car + "s" + ".sqlite";
             this.carrepo=new DataRepoCars(repopath, "Cars");
             this.reservationrepo=new DataRepoReservations(repopath, "Reservations");
         }
         else if(type.equals("memory")){
             this.carrepo=new Repository<Integer, Car>();
             this.reservationrepo=new Repository<Integer, Reservation>();
+        }
+        else if(type.equals("TextFile")){
+            String filenameCar= location + "/" + type +car+".txt";
+            String filenameReservation=location+ "/" + type +reservation+".txt";
+            this.carrepo=new FileRepoCar(filenameCar);
+            this.reservationrepo=new FileRepoReservations(filenameReservation);
+        }
+        else if(type.equals("BinaryFile")){
+            String filenameCar = location + "/" + type +car+".bin";
+            String filenameReservation=location+ "/" + type +reservation+".bin";
+            this.carrepo=new FileRepoCar(filenameCar);
+            this.reservationrepo=new FileRepoReservations(filenameReservation);
         }
     }
 

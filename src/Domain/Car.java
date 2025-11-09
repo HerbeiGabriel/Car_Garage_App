@@ -68,4 +68,8 @@ public class Car implements Identifiable<Integer> {
                 ", fueltank=" + fueltank +
                 '}';
     }
+
+    public String forText(){
+        return id+","+model+","+horsepower+","+fueltank;
+    }
 }

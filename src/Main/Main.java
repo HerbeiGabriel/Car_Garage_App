@@ -20,6 +20,5 @@ public class Main {
             UI.run();
         }catch (Exception e){
             e.printStackTrace();
-        }
-    }
+        }    }
 }
